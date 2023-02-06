@@ -20,10 +20,10 @@ function handleGet(req, res) {
         res.end('/about')
     } else if (path == '/contact-me') {
         res.end('/contact')
-    }
+    } else {
     res.statusCode = 404;
     res.end('404')
-    
+    }
 }
 
 const PORT = 3000;
