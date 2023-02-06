@@ -86,3 +86,11 @@ form {
     width: 33vw;
     min-width: 300px
 }
+
+img {
+    border-radius: 5px;
+    width: 53vw;
+    min-width: 300px;
+    max-width: 900px;
+    opacity: 92%;
+}
