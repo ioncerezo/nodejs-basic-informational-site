@@ -1,21 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>NodeJS index page</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>NodeJS contact page</title>
+  </head>
+  <body>
     <main>
-    <h1>Welcome to my page!</h1>
-    <p><i>Where do you want to go? :)</i></p>
-    <ul>
-        <li><a href="/">Index</a></li>
+      <h1>Contact me</h1>
+
+      <form action="action_page.php">
+        <label for="fname">First Name</label>
+        <input
+          type="text"
+          id="fname"
+          name="firstname"
+          
+        />
+
+        <label for="lname">Last Name</label>
+        <input
+          type="text"
+          id="lname"
+          name="lastname"
+          
+        />
+
+        <label for="country">Country</label>
+        <select id="country" name="country">
+          <option value="spain">Spain</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+        </select>
+
+        <label for="subject">Subject</label>
+        <textarea
+          id="subject"
+          name="subject"
+          style="height: 100px"
+        ></textarea>
+
+        <button>Send!</button>
+      </form>
+
+      <ul>
+        <li><a href="/">Go back</a></li>
         <li><a href="/about">About me</a></li>
-        <li><a href="/contact-me">Contact me</a></li>
-    </ul>
+      </ul>
     </main>
-</body>
+  </body>
 </html>
