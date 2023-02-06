@@ -1,7 +1,10 @@
 const http = require('http')
+var fs = require('fs');
+
+
+
 const server = http.createServer((req, res) => {
     const {method} = req
-    console.log(method)
     switch(method){
         case 'GET':
             return handleGet(req, res);
@@ -15,14 +18,45 @@ const server = http.createServer((req, res) => {
 function handleGet(req, res) {
     const path = req.url;
     if(path === '/'){
-        res.end('index')
+        fs.readFile('/home/ion/repos/Odin/NodeJS/nodejs-basic-informational-site/index.html',(err, page) => {
+            if(err){
+                res.writeHead(404);
+                res.write('Contents you are looking are Not Found');  
+            } else {
+                res.writeHead(200, { 'Content-Type': 'text/html' });
+                res.end(page);
+            }
+        })
     } else if (path == '/about') {
-        res.end('/about')
+        fs.readFile('/home/ion/repos/Odin/NodeJS/nodejs-basic-informational-site/about.html',(err, page) => {
+            if(err){
+                res.writeHead(404);
+                res.write('Contents you are looking are Not Found');  
+            } else {
+                res.writeHead(200, { 'Content-Type': 'text/html' });
+                res.end(page);
+            }
+        })
     } else if (path == '/contact-me') {
-        res.end('/contact')
+        fs.readFile('/home/ion/repos/Odin/NodeJS/nodejs-basic-informational-site/contact-me.html',(err, page) => {
+            if(err){
+                res.writeHead(404);
+                res.write('Contents you are looking are Not Found');  
+            } else {
+                res.writeHead(200, { 'Content-Type': 'text/html' });
+                res.end(page);
+            }
+        })
     } else {
-    res.statusCode = 404;
-    res.end('404')
+        fs.readFile('/home/ion/repos/Odin/NodeJS/nodejs-basic-informational-site/404.html',(err, page) => {
+            if(err){
+                res.writeHead(404);
+                res.write('Contents you are looking are Not Found');  
+            } else {
+                res.writeHead(404, { 'Content-Type': 'text/html' });
+                res.end(page);
+            }
+        })
     }
 }
 
