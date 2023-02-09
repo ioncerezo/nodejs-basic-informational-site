@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>NodeJS index page</title>
+    <link rel="stylesheet" href="/style.css">
+    <title>NodeJS users page</title>
 </head>
 <body>
     <main>
-    <h1>Welcome to my page!</h1>
-    <p><i>Where do you want to go? :)</i></p>
+    <h1><%= locals.text %></h1>
+    <img class="avatar" src=<%= "https://robohash.org/" + locals.text || aa %>></img>
     <ul>
         <li><a href="/">Index</a></li>
         <li><a href="/about">About me</a></li>
         <li><a href="/contact-me">Contact me</a></li>
+        <li><a href="/users">Users page</a></li>
     </ul>
     </main>
 </body>
